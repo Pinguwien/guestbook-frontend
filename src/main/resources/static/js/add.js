@@ -9,15 +9,16 @@ $(document).ready(function() {
 
     keycloak.init({ onLoad: 'login-required'
     }).success(
-        function(data){
+        function(){
             console.log('authenticated!');
             console.log('username:' + keycloak.username);
             console.log('token:' + keycloak.token);
 
         })
         .error(
-            function(data){
-                console.log('tilt')});
+            function(){
+                console.log('tilt')
+            });
 
 	$(".successarea").hide();
 
@@ -35,14 +36,13 @@ $(document).ready(function() {
             headers: {
                 "Authorization": "Bearer " + keycloak.token
             },
-            crossDomain: true,
             contentType:"application/json",
 			data:JSON.stringify(data),
-			success:function(data) {
+			success:function() {
 				$(".successarea").show();
 				$("form").hide();
 			},
-			error:function(data) {
+			error:function() {
 				console.log("Etwas hat beim hinzufügen nicht geklappt!");
 			}
 		});

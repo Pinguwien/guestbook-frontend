@@ -28,7 +28,6 @@ $(document).ready(function() {
         $.ajax({
             url:"http://127.0.0.1:8090/guestbook",
             method:"GET",
-            crossDomain: true,
             headers: {
                 "Authorization": "Bearer " + keycloak.token
             },
@@ -48,7 +47,7 @@ $(document).ready(function() {
                 }
             },
             error:function() {
-                console.log("Something didn't work out showing the entries!");
+                console.log("etwas hat beim Anzeigen nicht geklappt!");
             }
         });
     };
