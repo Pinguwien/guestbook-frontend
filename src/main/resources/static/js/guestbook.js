@@ -53,9 +53,7 @@ $(document).ready(function() {
     };
 
     refresh();
-
 	$("#refresh").off("click").on("click", refresh);
-
 });
 
 

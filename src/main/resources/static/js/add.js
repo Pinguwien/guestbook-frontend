@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
     var keycloak = Keycloak({
@@ -47,7 +46,4 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
-	
-	
-})
+});
