@@ -3,7 +3,7 @@ $(document).ready(function() {
     var keycloak = Keycloak({
         url: 'http://localhost:8080/auth',
         realm: 'springboot-example',
-        clientId: 'guestbook-frontend-app',
+        clientId: 'guestbook-frontend-app'
     });
 
 	var refresh = function() {
@@ -12,17 +12,17 @@ $(document).ready(function() {
 
         keycloak.init({ onLoad: 'login-required'
         }).success(
-            function(data){
+            function(){
                 console.log('authenticated!');
-                getEntries(data);
+                getEntries();
             })
             .error(
                 function(){
-                    console.log('tilt')});
+                    console.log('error');
+                });
 	};
 
     var getEntries = function(){
-        console.log('username:' + keycloak.username);
         console.log('token:' + keycloak.token);
 
         $.ajax({
